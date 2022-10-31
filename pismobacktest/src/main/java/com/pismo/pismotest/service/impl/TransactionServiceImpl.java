@@ -31,9 +31,9 @@ public class TransactionServiceImpl implements TransactionService {
 	@Override
 	public Mono<TransactionSavedDTO> save(TransactionDTO transactionDto) {
 		return Mono.just(transactionDto)
-		.map(transactionDTO -> buildTransaction(transactionDTO))
+		.map(this::buildTransaction)
 		.map(transaction -> transactionRepository.save(transaction))
-		.map(transactionSaved -> buildTransactionSavedDTO(transactionSaved));
+		.map(this::buildTransactionSavedDTO);
 	
 	}
 	

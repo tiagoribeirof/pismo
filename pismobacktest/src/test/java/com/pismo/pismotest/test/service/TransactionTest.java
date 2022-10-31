@@ -26,7 +26,7 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 @ExtendWith(SpringExtension.class)
-public class TransactionTest {
+class TransactionTest {
 
 	@Mock
 	private TransactionRepository transactionRepository;
@@ -54,7 +54,7 @@ public class TransactionTest {
 	}
 
 	@Test
-	public void shoudSaveTransactionForCompraAVista() {
+	 void shoudSaveTransactionForCompraAVista() {
 		TransactionDTO transactionDto = createTransactionDTO(COMPRA_AVISTA.getOperationTypeId());
 		Transaction transaction = createTransaction(new BigDecimal(0).subtract(AMOUNT), COMPRA_AVISTA);
 		when(transactionRepository.save(Mockito.any())).thenReturn(transaction);
@@ -67,7 +67,7 @@ public class TransactionTest {
 	}
 
 	@Test
-	public void shoudSaveTransactionForCompraParcelada() {
+	 void shoudSaveTransactionForCompraParcelada() {
 		TransactionDTO transactionDto = createTransactionDTO(COMPRA_PARCELADA.getOperationTypeId());
 		Transaction transaction = createTransaction(new BigDecimal(0).subtract(AMOUNT), COMPRA_PARCELADA);
 		when(transactionRepository.save(Mockito.any())).thenReturn(transaction);
@@ -80,7 +80,7 @@ public class TransactionTest {
 	}
 
 	@Test
-	public void shoudSaveTransactionForSaque() {
+	void shoudSaveTransactionForSaque() {
 		TransactionDTO transactionDto = createTransactionDTO(SAQUE.getOperationTypeId());
 		Transaction transaction = createTransaction(new BigDecimal(0).subtract(AMOUNT), SAQUE);
 		when(transactionRepository.save(Mockito.any())).thenReturn(transaction);
@@ -93,7 +93,7 @@ public class TransactionTest {
 	}
 
 	@Test
-	public void shoudSaveTransactionForPagamento() {
+	 void shoudSaveTransactionForPagamento() {
 		TransactionDTO transactionDto = createTransactionDTO(PAGAMENTO.getOperationTypeId());
 		Transaction transaction = createTransaction(AMOUNT, PAGAMENTO);
 		when(transactionRepository.save(Mockito.any())).thenReturn(transaction);
@@ -106,7 +106,7 @@ public class TransactionTest {
 	}
 
 	@Test
-	public void shoudThrowDataIntegrityViolationExceptionWhenAccountIsNulll() {
+	 void shoudThrowDataIntegrityViolationExceptionWhenAccountIsNulll() {
 		TransactionDTO transactionDto = createTransactionDTO(PAGAMENTO.getOperationTypeId());
 		when(transactionRepository.save(Mockito.any()))
 				.thenThrow(new DataIntegrityViolationException("DataIntegrityViolationException"));

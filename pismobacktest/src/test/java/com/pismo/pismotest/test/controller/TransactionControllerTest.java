@@ -26,7 +26,7 @@ import reactor.core.publisher.Mono;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(TransactionController.class)
-public class TransactionControllerTest {
+ class TransactionControllerTest {
 	
 	@Autowired
 	private WebTestClient webClient;
@@ -57,7 +57,7 @@ public class TransactionControllerTest {
 	
 	
 	@Test
-	public void shouldSaveTransactionAndReturnStatusAccepted() {
+	 void shouldSaveTransactionAndReturnStatusAccepted() {
 
 		TransactionDTO transactionDto = createTransactionDTO(COMPRA_AVISTA.getOperationTypeId());
 		TransactionSavedDTO transactionSavedDTO = buildTransactionSavedDTO(createTransaction());

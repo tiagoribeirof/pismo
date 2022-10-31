@@ -20,7 +20,7 @@ import reactor.core.publisher.Mono;
 
 @ExtendWith(SpringExtension.class)
 @WebFluxTest(AccountController.class)
-public class AccountControllerTest {
+ class AccountControllerTest {
 
 	@Autowired
 	private WebTestClient webClient;
@@ -42,7 +42,7 @@ public class AccountControllerTest {
 	}
 
 	@Test
-	public void shouldCreateAccounAndReturnStatusCreated() {
+	void shouldCreateAccounAndReturnStatusCreated() {
 
 		DocumentDTO documentDto = new DocumentDTO();
 		documentDto.setDocumentNumber(DOCUMENT_NUMBER);
@@ -55,7 +55,7 @@ public class AccountControllerTest {
 	}
 	
 	@Test
-	public void shouldReturnAccount() {
+	void shouldReturnAccount() {
 
 		when(accountService.findById(ACCOUNT_ID)).thenReturn(Mono.just(createAccountDTO()));
 
@@ -65,7 +65,7 @@ public class AccountControllerTest {
 	}
 	
 	@Test
-	public void shouldNotFiindAccountAndRerturnStatusNotFound() {
+	void shouldNotFiindAccountAndRerturnStatusNotFound() {
 
 		when(accountService.findById(ACCOUNT_ID)).thenReturn(Mono.empty());
 

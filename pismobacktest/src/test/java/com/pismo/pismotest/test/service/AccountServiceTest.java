@@ -23,7 +23,7 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 @ExtendWith(SpringExtension.class)
-public class AccountServiceTest {
+ class AccountServiceTest {
 	
  @InjectMocks	
  private AccountServiceImpl accountService;
@@ -50,7 +50,7 @@ public class AccountServiceTest {
  }
  
  @Test
- public void shoudFindAccountById() {
+  void shoudFindAccountById() {
 	     Account account = createAccount();
 		 when(accountRepository.findById(ACCOUNT_ID))
 		 .thenReturn(Optional.of(account));
@@ -67,7 +67,7 @@ public class AccountServiceTest {
 }
 	 
  @Test
- public void shoudNotFindAccountById() {
+  void shoudNotFindAccountById() {
 	     
 		 when(accountRepository.findById(ACCOUNT_ID))
 		 .thenReturn(Optional.empty());	
@@ -77,7 +77,7 @@ public class AccountServiceTest {
 	 
 
  @Test
- public void shoudCreateAccount() {
+  void shoudCreateAccount() {
 	     DocumentDTO documentDTO = new DocumentDTO();
 	     documentDTO.setDocumentNumber(DOCUMENT_NUMBER);
 	     
@@ -100,7 +100,7 @@ public class AccountServiceTest {
 }
  
  @Test
- public void shoudThrowDataIntegrityViolationExceptionWhenDocumentNumberIsNull() {
+  void shoudThrowDataIntegrityViolationExceptionWhenDocumentNumberIsNull() {
 	     DocumentDTO documentDTO = new DocumentDTO();
 	      
 	     Account accountToSave = Account.builder().build();

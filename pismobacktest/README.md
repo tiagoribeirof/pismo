@@ -6,18 +6,25 @@
 ## Pré-requisites:
 * Java 8
 * Maven Installed in you machine.
-* Docker
 
+## How to start the app:
 
 * Import the project as Maven project in your IDE.
 * Run Maven clean install by command line: mvn clean install
+* Configure the app to run WebApplication to start the server
+
+## Some informations:
+* For documentation of the endpoints you can access the [Swagguer](http://localhost:8080/pismotest/swagger-ui/index.html)
+
+* For health check you can access the [Actuator](http://localhost:8080/pismotest/actuator)
+
+* For code coverage report you can access the index.hml under target/site/jacoco-resources
 
 ### Reference Documentation
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.5/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.5/maven-plugin/reference/html/#build-image)
 * [Spring Reactive Web](https://docs.spring.io/spring-boot/docs/2.7.5/reference/htmlsingle/#web.reactive)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.5/reference/htmlsingle/#using.devtools)
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.5/reference/htmlsingle/#web)
