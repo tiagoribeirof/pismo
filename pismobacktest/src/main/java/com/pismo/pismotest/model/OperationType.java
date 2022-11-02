@@ -14,7 +14,7 @@ import lombok.Getter;
 
 @Getter
 @Entity
-@Table(name = "Operation_Type")
+@Table(name = "Operations_Types")
 public enum OperationType {
 	 
 	COMPRA_AVISTA(1, "COMPRA A VISTA"), COMPRA_PARCELADA(2, "COMPRA PARCELADA"), 

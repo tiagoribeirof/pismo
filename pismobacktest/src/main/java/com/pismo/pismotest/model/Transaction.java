@@ -32,7 +32,7 @@ public class Transaction implements Serializable {
 	    private static final long serialVersionUID = 4231929074680969634L;
 
 		@Id
-	    @GeneratedValue(strategy=GenerationType.AUTO)
+	    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	    @Column(name = "transaction_id", nullable = false)
 		private Long transactionId;
 	    
@@ -45,7 +45,7 @@ public class Transaction implements Serializable {
 	    @Enumerated(EnumType.ORDINAL)
 	    private OperationType operationTypeId;
 	    
-	    @Column(name = "ammount", nullable = false)
+	    @Column(name = "amount", nullable = false)
 	    private BigDecimal amount;
 	    
 	    @CreationTimestamp

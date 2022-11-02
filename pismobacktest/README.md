@@ -6,12 +6,14 @@
 ## Pré-requisites:
 * Java 8
 * Maven Installed in you machine.
+* Docker Installed
 
 ## How to start the app:
 
 * Import the project as Maven project in your IDE.
 * Run Maven clean install by command line: mvn clean install
-* Configure the app to run WebApplication to start the server
+* Run from root directory the command  'docker compose up -d'  to create the database and start the redis service
+* Configure the app to run WebApplication to start the server.
 
 ## Some informations:
 * For documentation of the endpoints you can access the [Swagguer](http://localhost:8080/pismotest/swagger-ui/index.html)
@@ -19,6 +21,8 @@
 * For health check you can access the [Actuator](http://localhost:8080/pismotest/actuator)
 
 * For code coverage report you can access the index.hml under target/site/jacoco-resources
+
+* To see more about the app check the wiki in the git repository.
 
 ### Reference Documentation
 For further reference, please consider the following sections:
